@@ -10,6 +10,11 @@ struct Libro{
 };
 
 int main(){
+    int n;
+    Libro libros[100];
+    cout << "Ingrese la atidad de libros:";
+    cin >> n;
+    cin.ignore();
     
     return 0;
 }
