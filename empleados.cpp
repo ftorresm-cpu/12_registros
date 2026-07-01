@@ -15,5 +15,15 @@ int main() {
     
     Empleado lista[100];
     
+    for (int i = 0; i < n; i++) {
+        cin >> lista[i].numero;
+        cin >> lista[i].nombre;
+        cin >> lista[i].salario;
+        
+        for (int m = 0; m < 12; m++) {
+            cin >> lista[i].ventas[m];
+        }
+    }
+    
     return 0;
 }
