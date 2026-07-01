@@ -20,5 +20,20 @@ int main() {
         cin >> lista[i].sueldo;
     }
     
+    Empleado empMayor = lista[0];
+    Empleado empMenor = lista[0];
+    
+    for (int i = 1; i < n; i++) {
+        if (lista[i].sueldo > empMayor.sueldo) {
+            empMayor = lista[i];
+        }
+        if (lista[i].sueldo < empMenor.sueldo) {
+            empMenor = lista[i];
+        }
+    }
+    
+    cout << empMayor.nombre << " " << empMayor.sexo << " " << empMayor.sueldo << endl;
+    cout << empMenor.nombre << " " << empMenor.sexo << " " << empMenor.sueldo << endl;
+    
     return 0;
 }
