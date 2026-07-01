@@ -15,5 +15,12 @@ int main() {
     
     Atleta lista[100];
     
+    for (int i = 0; i < n; i++) {
+        cin >> lista[i].nombre;
+        cin >> lista[i].pais;
+        cin >> lista[i].disciplina;
+        cin >> lista[i].medallas;
+    }
+    
     return 0;
 }
