@@ -25,17 +25,52 @@ int main() {
     
     while (opcion != 0) {
         cout << "\n--- MENU TIENDA ---" << endl;
-        cout << "1. Registrar producto" << endl;
-        cout << "2. Listar productos" << endl;
-        cout << "3. Buscar producto" << endl;
-        cout << "4. Actualizar precio" << endl;
-        cout << "5. Eliminar producto" << endl;
-        cout << "6. Registrar venta" << endl;
-        cout << "7. Listar ventas" << endl;
-        cout << "8. Calcular total de caja" << endl;
-        cout << "0. Salir" << endl;
+        cout << "1. Registrar producto\n2. Listar productos\n3. Buscar producto" << endl;
+        cout << "4. Actualizar precio\n5. Eliminar producto\n6. Registrar venta" << endl;
+        cout << "7. Listar ventas\n8. Calcular total de caja\n0. Salir" << endl;
         cout << "Ingrese opcion: ";
         cin >> opcion;
+        
+        if (opcion == 1) {
+            cin >> inventario[totalProductos].nombre;
+            cin >> inventario[totalProductos].precio;
+            totalProductos = totalProductos + 1;
+            
+        } else if (opcion == 2) {
+            for (int i = 0; i < totalProductos; i++) {
+                if (inventario[i].precio > 0) {
+                    cout << inventario[i].nombre << " " << inventario[i].precio << endl;
+                }
+            }
+            
+        } else if (opcion == 3) {
+            string buscado;
+            cin >> buscado;
+            for (int i = 0; i < totalProductos; i++) {
+                if (inventario[i].nombre == buscado && inventario[i].precio > 0) {
+                    cout << inventario[i].nombre << " " << inventario[i].precio << endl;
+                }
+            }
+            
+        } else if (opcion == 4) {
+            string modificar;
+            cin >> modificar;
+            for (int i = 0; i < totalProductos; i++) {
+                if (inventario[i].nombre == modificar && inventario[i].precio > 0) {
+                    cin >> inventario[i].precio;
+                }
+            }
+            
+        } else if (opcion == 5) {
+            string borrar;
+            cin >> borrar;
+            for (int i = 0; i < totalProductos; i++) {
+                if (inventario[i].nombre == borrar) {
+                    inventario[i].precio = 0;
+                    cout << "Eliminado" << endl;
+                }
+            }
+        }
     }
     
     return 0;
