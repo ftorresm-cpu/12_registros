@@ -70,6 +70,34 @@ int main() {
                     cout << "Eliminado" << endl;
                 }
             }
+            
+        } else if (opcion == 6) {
+            // Registrar una venta
+            historial[totalVentas].idVenta = totalVentas + 1;
+            cin >> historial[totalVentas].producto;
+            cin >> historial[totalVentas].cantidad;
+            
+            float precioProd = 0;
+            for (int i = 0; i < totalProductos; i++) {
+                if (inventario[i].nombre == historial[totalVentas].producto) {
+                    precioProd = inventario[i].precio;
+                }
+            }
+            
+            historial[totalVentas].precioTotal = historial[totalVentas].cantidad * precioProd;
+            totalVentas = totalVentas + 1;
+            
+        } else if (opcion == 7) {
+            for (int i = 0; i < totalVentas; i++) {
+                cout << historial[i].idVenta << " " << historial[i].producto << " " << historial[i].cantidad << " " << historial[i].precioTotal << endl;
+            }
+            
+        } else if (opcion == 8) {
+            float cajaGeneral = 0;
+            for (int i = 0; i < totalVentas; i++) {
+                cajaGeneral = cajaGeneral + historial[i].precioTotal;
+            }
+            cout << "Total caja: " << cajaGeneral << endl;
         }
     }
     
